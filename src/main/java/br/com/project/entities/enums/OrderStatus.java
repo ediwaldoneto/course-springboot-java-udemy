@@ -21,6 +21,6 @@ public enum OrderStatus {
 				return value;
 			}
 		}
-		throw new IllegalArgumentException("");
+		throw new IllegalArgumentException("Invalid argument");
 	} 
 }

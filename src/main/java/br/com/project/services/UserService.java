@@ -31,7 +31,24 @@ public class UserService {
 	}
 
 	public void delete(Long id) {
-		
+
 		userRepository.deleteById(id);
+	}
+
+	public User update(Long id, User obj) {
+
+		User aux = userRepository.getOne(id);
+		updateData(aux, obj);
+		return userRepository.save(aux);
+
+	}
+
+	public void updateData(User optional, User obj) {
+
+		optional.setName(obj.getName());
+		optional.setEmail(obj.getEmail());
+		optional.setPhone(obj.getPhone());
+		optional.setPassword(obj.getPassword());
+
 	}
 }
